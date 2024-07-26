@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PokeCard from "./PokeCard";
 
 
+
 const Pokemon = ({ id }) => {
 
    
@@ -76,8 +77,8 @@ const pokeLocationList=location.map((ubication)=>{
           .map(([title, url]) => (url ? <img src={url} alt={title} /> : null));
       };
     
-        console.log(Object.entries(id.sprites));
-        console.log(id.sprites);
+       
+     
     
     
     
@@ -116,6 +117,7 @@ const pokeLocationList=location.map((ubication)=>{
       <div>
         <PokeCard id={id}/>
       </div>
+     
     </div>
   );
 };
