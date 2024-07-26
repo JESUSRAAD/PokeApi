@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Pokemon from "./Pokemon";
 import PokeList from "./PokeList";
+import { PokeContext } from "../context/PokemonContext";
+
 
 const PokeInfo = () => {
   //https://pokeapi.co/api/v2/{endpoint}/
 
-  const [pokeId,setPokeId] = useState(151);
+  // const [pokeId,setPokeId] = useState(151);
+const {pokeId}=useContext(PokeContext)
+console.log(pokeId);
 
   const [pokemon, setPokemon] = useState([]);
   const [poke20, setpoke20] = useState("");
@@ -36,7 +40,7 @@ const PokeInfo = () => {
 
 useEffect(() => {
     getPokeById();
-}, []);
+}, [pokeId]);
 
 
   

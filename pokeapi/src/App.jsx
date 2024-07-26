@@ -7,13 +7,15 @@ import SobreNosotros from "./pages/SobreNosotros";
 import Suscripcion from "./pages/Suscripcion";
 import Tienda from "./pages/Tienda";
 import NavBar from "./components/NavBar";
+import PokeContextProvider from "./context/PokemonContext";
+
 
 
 
 const App = () => {
   return (
     <div>
-      
+      <PokeContextProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -26,7 +28,7 @@ const App = () => {
           <footer>footer</footer>
         </BrowserRouter>
         <PokeInfo />
-       
+        </PokeContextProvider>
     </div>
   );
 };
