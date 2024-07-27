@@ -1,3 +1,4 @@
+import { Swords } from "lucide-react";
 import React, { useEffect } from "react";
 
 const PokeCard = ({ id }) => {
@@ -11,8 +12,8 @@ const PokeCard = ({ id }) => {
     const card = id.stats.map((stat) => {
       return (
         <div className="mb-2">
-          <p className="font-bold text-gray-700">
-            {stat.stat.name}:{stat.base_stat}
+         <p className="flex font-light text-gray-700">
+         <Swords /> {stat.stat.name}:{stat.base_stat}
           </p>
         </div>
       );
@@ -28,8 +29,8 @@ const PokeCard = ({ id }) => {
   const capitalName = id.name;
   // console.log(capitalName.toUpperCase());
   return (
-    <div className="max-w-xs mx-auto bg-white border-2 border-gray-300 shadow-md rounded-lg overflow-hidden">
-      <div className="bg-blue-500 text-black p-4">
+    <div className="max-w-max mx-auto bg-white border-2 border-gray-300 shadow-md rounded-lg overflow-hidden">
+      <div className="bg-blue-500 text-white p-4">
         <h2 className="text-2xl font-bold text-center">
           {capitalName.toUpperCase()}
         </h2>
