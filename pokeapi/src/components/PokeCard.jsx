@@ -34,10 +34,10 @@ const PokeCard = ({ id }) => {
         <h2 className="text-2xl font-bold text-center">
           {capitalName.toUpperCase()}
         </h2>
-        <div className="flex justify-center bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtZk44zmb2phoudWrzYbI_cOdyZwVgbS29-g&s)] bg-cover text-white p-2 text-center">
+        <div className="flex justify-center bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtZk44zmb2phoudWrzYbI_cOdyZwVgbS29-g&s)] bg-cover text-white p-2 text-center rounded-t-xl">
           <div>{imgsPokemon().slice(4, 5)}</div>
         </div>
-        <div className="flex gap-4 p-4 bg-yellow-100">
+        <div className="flex  justify-center gap-4 p-4 bg-yellow-100 rounded-b-xl">
           <div>{pokeCard().slice(0, 3)}</div>
           <div>{pokeCard().slice(3, 6)}</div>
         </div>

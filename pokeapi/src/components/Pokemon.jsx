@@ -72,7 +72,7 @@ const Pokemon = ({ id }) => {
             <Leaf color="#015102" />
           ) : type.type.name === "psychic" ? (
             <Podcast color="#F37179" />
-          ) : type.type.name === "earth" ? (
+          ) : type.type.name === "ground" ? (
             <Mountain color="#4d0000" />
           ) : type.type.name === "rock" ? (
             <BrainCog color="#CCBE89" />
@@ -131,7 +131,7 @@ const Pokemon = ({ id }) => {
 
   const pokeLocationList = location.map((ubication) => {
     return (
-      <li className="flex min-w-[270px]">
+      <li className="flex min-w-[370px]">
         <MapPin color="#fc0303" /> {ubication.location_area.name}
       </li>
     );
@@ -174,7 +174,10 @@ const Pokemon = ({ id }) => {
 
         <div className="  w-fit h-fit bg-white  border-lime-600 border-[4px] rounded-xl ">
           MOVIMIENTOS:
-          <ul className="flex  flex-wrap mx-2 my-2  ">{pokeMoves()}</ul>
+          <div >
+          <ul className="flex  justify-center flex-wrap mx-2 my-2  ">{pokeMoves()}</ul>
+
+          </div>
         </div>
         <div className="  w-fit h-fit bg-white  border-lime-600 border-[4px] rounded-xl ">
           ITEMS:
@@ -185,7 +188,7 @@ const Pokemon = ({ id }) => {
         </div>
         <div className=" w-fit h-fit bg-white  border-lime-600 border-[4px] rounded-xl ">
           UBICACION:
-          <ul className="flex  flex-wrap mx-2 my-2  ">{pokeLocationList}</ul>
+          <ul className="flex   flex-wrap mx-2 my-2  ">{pokeLocationList}</ul>
         </div>
         <p className="flex justify-center items-center">{imgsPokemon()}</p>
         <div>

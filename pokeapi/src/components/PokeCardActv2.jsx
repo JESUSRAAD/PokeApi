@@ -3,8 +3,9 @@ import { PokeContext } from "../context/PokemonContext";
 import { Swords } from "lucide-react";
 
 const PokeCardActv2 = ({ list }) => {
-  //   console.log(list);
-  const { pokeId, setPokeId } = useContext(PokeContext);
+    console.log(list);
+  
+  const {  setPokeId } = useContext(PokeContext);
   const [pokeDetails, setPokeDetails] = useState([]);
 
   const getPokeDetails = async () => {
@@ -26,7 +27,6 @@ const PokeCardActv2 = ({ list }) => {
   };
 
   useEffect(() => {
-    // imgsPokemon()
     getPokeDetails();
   }, []);
   console.log(pokeDetails);
@@ -68,7 +68,7 @@ if (pokemon.id%2===0) {
 
 
         return (
-          <div className="max-w-xs mx-auto bg-white border-2 border-gray-300 shadow-md rounded-lg overflow-hidden">
+          <div className="max-w-max mx-auto bg-white border-2 border-gray-300 shadow-md rounded-lg overflow-hidden">
             <div className={cssClass}>
               <h2 className="text-2xl font-bold text-center">
                 {pokemon.name.toUpperCase()}
