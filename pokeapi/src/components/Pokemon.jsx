@@ -144,7 +144,7 @@ const Pokemon = ({ id }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center bg-[url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/volcano.jpg)] max-h-max bg-cover">
+    <div className="flex flex-col justify-center items-center bg-[url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/volcano.jpg)] max-h-max bg-cover bg-center ">
       <div className=" flex flex-col gap-4  max-w-[90%]  bg-white p-6 mx-8 my-8 bg-opacity-45 border-lime-600 border-[4px] rounded-xl">
         <div className=" flex p-2  justify-center ">
           <p className="flex p-2  justify-center w-fit font-extrabold text-4xl text-yellow-400  ">

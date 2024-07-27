@@ -40,7 +40,7 @@ console.log(poke20);
 
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex  flex-col justify-center">
        {loading ? (
         <p>Cargando</p>
       ) : (

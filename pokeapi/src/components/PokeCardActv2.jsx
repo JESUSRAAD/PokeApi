@@ -32,7 +32,7 @@ const PokeCardActv2 = ({ list }) => {
   console.log(pokeDetails);
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex gap-3 flex-wrap">
       {pokeDetails.map((pokemon) => {
         const imgsPokemon = () => {
           return Object.entries(pokemon.sprites)
@@ -73,7 +73,7 @@ if (pokemon.id%2===0) {
               <h2 className="text-2xl font-bold text-center">
                 {pokemon.name.toUpperCase()}
               </h2>
-              <div className="flex justify-center bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtZk44zmb2phoudWrzYbI_cOdyZwVgbS29-g&s)] bg-cover text-white p-2 text-center rounded-t-xl">
+              <div className="flex justify-center bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtZk44zmb2phoudWrzYbI_cOdyZwVgbS29-g&s)] bg-center  text-white p-2 text-center rounded-t-xl">
                 {imgsPokemon()}
               </div>
               <div className="flex flex-col justify-center gap-4 p-4 bg-yellow-100 rounded-b-xl">
