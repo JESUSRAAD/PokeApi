@@ -14,7 +14,7 @@ console.log(limit);
   useEffect(() => {
     const getPokeById = async () => {
       try {
-        // setLoading(true);
+        setLoading(true);
         const [ responsePoke20] = await Promise.all([
           fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}`),
         ]);
