@@ -5,8 +5,10 @@ import { Swords } from "lucide-react";
 const PokeCardActv2 = ({ list }) => {
     console.log(list);
   
-  const {  setPokeId } = useContext(PokeContext);
-  const [pokeDetails, setPokeDetails] = useState([]);
+  const {  setPokeId,copyDetailsPokemons,setCopyDetailsPokemons,pokeDetails, setPokeDetails,setFreshArrFuntin,limit} = useContext(PokeContext);
+  
+
+
 
   const getPokeDetails = async () => {
     try {
@@ -20,7 +22,16 @@ const PokeCardActv2 = ({ list }) => {
           return response.json();
         })
       );
-      setPokeDetails(data);
+
+if (limit===20) {
+  setPokeDetails(data);
+} else {
+  setPokeDetails((prevDetails)=> [...prevDetails, ...data]);
+}
+
+
+
+     
     } catch (error) {
       console.log(error);
     }
@@ -28,8 +39,13 @@ const PokeCardActv2 = ({ list }) => {
 
   useEffect(() => {
     getPokeDetails();
-  }, []);
+  }, [list]);
+
+  // setFreshArrFuntin( getPokeDetails())
   console.log(pokeDetails);
+
+
+
 
   return (
     <div className="flex gap-3 flex-wrap">
@@ -54,9 +70,20 @@ const PokeCardActv2 = ({ list }) => {
           return stat;
         };
 
+
+
+
         const handlePokeInfo = () => {
         return  setPokeId(pokemon.id);
         };
+        const handlePokeDelete = (id) => {
+        return  setPokeDetails((prevDetails)=> prevDetails.filter((detail)=>detail.id!==id));
+        };
+
+
+
+
+
 
         let cssClass=""
 if (pokemon.id%2===0) {
@@ -71,7 +98,7 @@ if (pokemon.id%2===0) {
           <div className="max-w-max mx-auto bg-white border-2 border-gray-300 shadow-md rounded-lg overflow-hidden">
             <div className={cssClass}>
               <h2 className="text-2xl font-bold text-center">
-                {pokemon.name.toUpperCase()}
+                {pokemon.name.toUpperCase()}   #{pokemon.id}
               </h2>
               <div className="flex justify-center bg-[url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtZk44zmb2phoudWrzYbI_cOdyZwVgbS29-g&s)] bg-center  text-white p-2 text-center rounded-t-xl">
                 {imgsPokemon()}
@@ -81,9 +108,17 @@ if (pokemon.id%2===0) {
                   <div>{pokeCard().slice(0, 3)}</div>
                   <div>{pokeCard().slice(3, 6)}</div>
                 </div>
-                <button onClick={handlePokeInfo} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                <div className="flex w-full gap-2">
+                <button onClick={()=>handlePokeInfo()} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-[80%]">
                   Info
                 </button>
+                <button 
+                onClick={()=>handlePokeDelete(pokemon.id)} 
+                className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded w-[20%]">
+                  X
+                </button>
+
+                </div>
               </div>
             </div>
           </div>

@@ -4,24 +4,25 @@ import { PokeContext } from "../context/PokemonContext";
 
 const PokeList = () => {
 
-  const {limit } = useContext(PokeContext);
-console.log(limit);
-  const [poke20, setpoke20] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {limit,set } = useContext(PokeContext);
 
+console.log(limit);
+console.log(set);
+  
+  const [loading, setLoading] = useState(true);
+const [poke20, setPoke20]=useState([])
 
   
   useEffect(() => {
     const getPokeById = async () => {
       try {
-        setLoading(true);
-        const [ responsePoke20] = await Promise.all([
-          fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}`),
-        ]);
+      
+        const  responsePoke20 = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${set}`)
+        
 
 
         const poke20Data = await responsePoke20.json();
-        setpoke20(poke20Data.results);
+        setPoke20(poke20Data.results);
 console.log(responsePoke20);
 setLoading(false);
 
@@ -33,7 +34,7 @@ setLoading(false);
     };
 
     getPokeById();
-  }, [limit]);
+  }, [limit,set]);
 
 console.log(poke20);
 

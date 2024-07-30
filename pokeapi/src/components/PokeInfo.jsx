@@ -15,7 +15,7 @@ const PokeInfo = () => {
   useEffect(() => {
     const getPokeById = async () => {
       try {
-        // setLoading(true);
+        
         const [responsePokemons] = await Promise.all([
           fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`),
         ]);

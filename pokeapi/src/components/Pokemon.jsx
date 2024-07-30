@@ -76,7 +76,7 @@ const Pokemon = ({ id }) => {
             <Mountain color="#4d0000" />
           ) : type.type.name === "rock" ? (
             <BrainCog color="#CCBE89" />
-          ) : type.type.name === "sinister" ? (
+          ) : type.type.name === "dark" ? (
             <Eclipse color="#7d2dbe" />
           ) : (
             <Twitter color="#5cc9ff" />
